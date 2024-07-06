@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            background-color: #ffe6f2; /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .slideshow-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slideshow-container img {
+            width: 100%;
+            vertical-align: middle;
+            display: none;
+        }
+        .letter-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+        .letter-container h2 {
+            font-size: 2rem; /* Larger title font size */
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ff3366; /* Pink color for title */
+        }
+        .heart {
+            color: #ff3366;
+        }
+        .heart::before {
+            content: '\2764'; /* Heart symbol */
+            font-size: 1.5em; /* Larger heart size */
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .slideshow-container, .letter-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<audio id="backgroundMusic" autoplay loop>
+    <source src="Apocalypse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+    <div class="slideshow-container">
+        <img class="mySlides" src="Photo1.jpg" alt="Photo 1">
+        <img class="mySlides" src="Photo2.jpg" alt="Photo 2">
+        <img class="mySlides" src="Photo3.jpg" alt="Photo 3">
+        <img class="mySlides" src="Photo4.jpg" alt="Photo 3">
+        <img class="mySlides" src="Photo5.jpg" alt="Photo 3">
+    </div>
+
+    <div class="letter-container">
+        <h2>You are my zing!!!!!</h2>
+        <p>Kiraaaa,,</p>
+        <p>First of all, you know right I'm not at all good with words XD. Mainly tar jonnei adha jhamela hoi. But yeah I try. 
+            I've hurt you many times. I know. Perhaps I'll hurt you in the future too, but one thing I promise I'll always make up for it. Always. 
+            Because if you've seen Hotel Transylvania, you probably know the word "Zing". You're my zing Debanjana, and you'll always be. From the moment I fell in love with you, from the moment I saw you for the first time. From the moment I held or rather you held my hand for the first time. Never leave that hand Tuntuni. Together we'll overcome everything there is to come, as long as there's the two of us. It's not that I'll be completely lost without you, nor will you be completely lost without me. And yes another web series/movie reference here XD. "What about flying ?" "There's no flying without you Sabrina Spellman". Just replace Sabrina Spellman with Debanjana Dutta.
+            Anyway, that's all I had to say. I know you can understand me, you did once, and you still do. 
+            Take Love.
+            If I'm ever gone from this world, this will be with you always. I hope you'll check this one once in a while then :)
+            I love you
+            Soham</p>
+        <p>With all my love, <span class="heart"></span></p>
+    </div>
+</div>
+
+<script>
+    // JavaScript for automatic slideshow
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    // Start the slideshow automatically
+    showSlides();
+
+    // Background music management
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    
+    // Ensure background music starts playing automatically and loops
+    window.addEventListener('load', function() {
+        backgroundMusic.play();
+    });
+</script>
+
+</body>
+</html>
